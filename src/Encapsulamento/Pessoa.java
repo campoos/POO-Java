@@ -1,27 +1,44 @@
-package Construtores;
+package Encapsulamento;
 //  Criando uma classe com nome e idade + um metodo apresentar()
 
 public class Pessoa {
-    //Dados que pertencem a classe molde, eles são obrigatórios mesmo que declarados no objeto
-    String nome;
-    int idade;
 
-    //construtor -> serve para eu obrigar a fornecer certo dado ao instanciar o objeto (tem que ter o mesmo nome da
-    // classe molde)
-    Pessoa(String nome, int idade){
-        // o this serve para eu dizer ao Java que estou falando do atributo da classe.
-        // caso o nome seja diferente não tem porque usar ele, EXEMPLO:
+    // Deixando os atributos private para impedir de serem alterados pelo atributo diretamente
+    private String nome;
+    private int idade;
 
-        // nome = n;
-        // idade = i;
-
-        // esquerda -> atributo da classe
-        // direita  -> parametro do construtor que vem da instancia e é recebido pelo parametro do metodo.
+    public Pessoa(String nome, int idade){
         this.nome = nome;
         this.idade = idade;
     }
 
-    void apresentar(){
+    //Criando métodos public para acesso com controle (podemos fazer validações e tratamentos de erro).
+
+    public String getNome(){
+        return nome;
+    }
+
+    public int getIdade(){
+        return idade;
+    }
+
+    public void setNome(String nome){
+        if(nome.length() < 2){
+            System.out.println("Nome inválido.");
+            return;
+        }
+        this.nome = nome;
+    }
+
+    public void setIdade(int idade){
+        if(idade < 0){
+            System.out.println("Idade inválida.");
+            return;
+        }
+        this.idade = idade;
+    }
+
+    public void apresentar(){
         System.out.println("Olá, meu nome é " + nome + " e tenho " + idade + " anos.");
     }
 }

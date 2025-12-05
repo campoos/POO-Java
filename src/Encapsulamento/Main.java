@@ -1,19 +1,24 @@
-package Construtores;
+package Encapsulamento;
 // Usando a classe criada na Pessoa
 
 public class Main {
     public static void main(String[] args) {
 
-        //Agora com construtores podemos chamar de forma mais simples, mas de forma obrigatóra a nova instancia.
+
+
         Pessoa p1 = new Pessoa("Joao", 17);
-//        p1.nome = "João";
-//        p1.idade = 17;
+
         p1.apresentar();
 
+        //Agora para acessar os atributos eu preciso acessar pelos métodos
+        System.out.println(p1.getIdade());
+        p1.setIdade(22);
+        System.out.println(p1.getIdade());
 
-        Pessoa p2 = new Pessoa("Gabriela", 30);
-//        p2.nome = "Gabriela";
-//        p2.idade = 55;
-        p2.apresentar();
+        System.out.println(p1.getNome());
+        p1.setNome("João Victor Campos dos Santos");
+        System.out.println(p1.getNome());
+
+        p1.apresentar();
     }
 }

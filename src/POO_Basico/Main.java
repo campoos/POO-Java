@@ -1,5 +1,5 @@
-
-// Usando a classe criada na Main
+package POO_Basico;
+// Usando a classe criada na Pessoa
 
 public class Main {
     public static void main(String[] args) {

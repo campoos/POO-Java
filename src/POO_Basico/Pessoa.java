@@ -1,4 +1,4 @@
-
+package POO_Basico;
 //  Criando uma classe com nome e idade + um metodo apresentar()
 
 public class Pessoa {
